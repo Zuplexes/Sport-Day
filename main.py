@@ -10,7 +10,6 @@ n = len(df)
 g_dum, d_dum = pd.get_dummies(df['gender']).values, pd.get_dummies(df['department']).values
 phys = df[['weight', 'height', 'age', 'bmi']].values
 
-
 def calc_fitness(chrom):
     mask_a, mask_b = (chrom == 0), (chrom == 1)
     if mask_a.sum() == 0 or mask_b.sum() == 0: return 1e6
@@ -94,4 +93,5 @@ for container in ax[3].containers:
 
 sns.despine()
 plt.tight_layout()
+
 plt.show()
